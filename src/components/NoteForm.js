@@ -1,4 +1,4 @@
-import React,{useRef,useState} from 'react'
+import React,{useRef} from 'react'
 import { FaArrowLeft } from 'react-icons/fa'
 import { IoMdCheckmark } from 'react-icons/io'
 const NoteForm = ({
@@ -28,8 +28,7 @@ const NoteForm = ({
           onClick={closeModal}
           className=" text-blue-600 cursor-pointer"
           />
-          <h1>Note</h1>
-          
+          <h1>Note</h1>          
           <button type='submit'>
           <IoMdCheckmark 
           className='text-blue-600 cursor-pointer text-3xl'

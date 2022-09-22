@@ -5,43 +5,8 @@ import Header from '../src/components/Header'
 import Search from '../src/components/Search'
 import NoteList from '../src/components/NoteList'
 
-// import NoteForm from '../src/components/NoteForm'
-
 function App() {
 
-  const noteItems = [
-    // {
-    
-    //   id:nanoid(),
-    //   title:"hello",
-    //   content:"how are you?",
-    //   date:"August 29 2022 18:50pm",
-    //   isCompleted:false
-    // },
-    // {
-    //   id:nanoid(),
-    //   title:"Reactjs",
-    //   content:"I am a react Reactjs",
-    //   date:"August 29 2022 18:50pm",
-    //   isCompleted:false
-    // },
-    // {
-    //   id:nanoid(),
-    //   title:"Python",
-    //   content:"I love learing Python",
-    //   date:"August 29 2022 18:50pm",
-    //   isCompleted:false
-    // },
-    // {
-    //   id:nanoid(),
-    //   title:"Php",
-    //   content:"Php is better",
-    //   date:"August 29 2022 18:50pm",
-    //   isCompleted:false
-    // }
-    
-  ]
-  
   const [notes,setNotes]=useState([])
   const [inputTitle,setInputTitle]=useState("")
   const [inputText,setInputText]=useState("")  
@@ -75,6 +40,7 @@ function App() {
      ampm = hours >= 12 ? "PM": "AM";
      hours %= 12;
      hours = hours ? hours : 12;
+     hours = hours < 10 ? '0'+hours:hours;
      minutes = minutes < 10 ? '0'+ minutes : minutes;
      let strTime = `${today}, ${hours} : ${minutes} ${ampm}`
      return strTime; 
@@ -127,7 +93,6 @@ function App() {
     setEditNoteId(id)
     setEditTextAreaId(id)
     setEditNote(editedNotes.title)
-    // setEditNote(editedNotes.content)
     setEditTextArea(editedNotes.content)
   }
   return (
@@ -139,7 +104,6 @@ function App() {
       />
       <Search handleSearchInput={setSearchInput} darkmode={darkMode} />
       <NoteList
-
       date = {formatDate(new Date())} 
       notes={notes.filter(note => note.title.toLocaleLowerCase().includes(searchInput)
      || note.content.toLocaleLowerCase().includes(searchInput))} 
@@ -161,7 +125,6 @@ function App() {
      editTextAreaId={editTextAreaId}
      setEditTextAreaId={setEditTextAreaId}
      />
-      {/* <NoteForm />       */}
     </div>
   );
 }

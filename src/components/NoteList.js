@@ -1,9 +1,8 @@
 import React,{useState} from 'react'
-
 import Note from '../components/Note'
 import {MdOutlineAdd} from 'react-icons/md'
 import NoteForm from '../components/NoteForm'
-import AnimatePage from './AnimatePage'
+
 const NoteList = ({
 
   date,
@@ -31,10 +30,9 @@ const NoteList = ({
   const [showModal,setShowModal]=useState(false)
   const [editShowModal,setEditShowModal]=useState(false)
   return (
-    
+  
     <div>
     <div className='flex items-center flex-wrap justify-center'>
-        
     <button className='text-white fixed top-[90%]'> 
     <MdOutlineAdd 
     className={` transition delay-500 duration-500 ease-in-out ${darkMode ? "text-white hover:bg-black text-white"
@@ -44,8 +42,7 @@ const NoteList = ({
     onClick={()=> setShowModal(true)}
     /></button>
         {notes?.map((note)=>(
-            <Note 
-            
+            <Note           
             key={note.id}
             note={note}
             id={note.id}
@@ -73,13 +70,6 @@ const NoteList = ({
             setEditShowModal={setEditShowModal}
             />
         ))}
-        
-    {/* <button className='text-white'> 
-    <MdOutlineAdd 
-    className=' transition delay-700 rounded-full h-10 w-10 bg-blue-600 hover:bg-white 
-    flex justify-center items-center cursor-pointer fixed top-96 left-96'
-    onClick={()=> setShowModal(true)}
-    /></button> */}
     </div>
     <div>
     <NoteForm

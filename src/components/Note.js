@@ -21,7 +21,6 @@ const Note = ({
   handleEditInputSubmit,
 }) => {
 
-
   const truncateNote=(str,num)=>{
    return str.length > num ? str.substring(0,num-1) + "...":str;
   } 

@@ -16,7 +16,6 @@ const EditForm = ({
     const closeModal =()=>{
         setEditShowModal(!false)
       }
-    // const date = new Date();
 
   return (
     !editShowModal &&
